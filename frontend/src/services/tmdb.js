@@ -108,3 +108,31 @@ export const searchMovies = async (query, page = 1) => {
         return [];
     }
 };
+
+// Fetch genres
+export const getGenres = async () => {
+    try {
+        const response = await fetch(
+            `${BASE_URL}/genre/movie/list?api_key=${API_KEY}&language=en-US`
+        );
+        const data = await response.json();
+        return data.genres || [];
+    } catch (error) {
+        console.error('Error fetching genres:', error);
+        return [];
+    }
+};
+
+// Fetch movies by genre
+export const getMoviesByGenre = async (genreId, page = 1) => {
+    try {
+        const response = await fetch(
+            `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=en-US&with_genres=${genreId}&page=${page}`
+        );
+        const data = await response.json();
+        return data.results || [];
+    } catch (error) {
+        console.error('Error fetching movies by genre:', error);
+        return [];
+    }
+};

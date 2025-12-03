@@ -8,6 +8,8 @@ import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Browse from './pages/Browse';
 import Trending from './pages/Trending';
+import Categories from './pages/Categories';
+import About from './pages/About';
 import MovieDetails from './pages/MovieDetails';
 import Wishlist from './pages/Wishlist';
 import SearchResults from './pages/SearchResults';
@@ -60,6 +62,8 @@ function App() {
                             <Route path="/landing" element={<LandingPage />} />
                             <Route path="/" element={<Browse />} />
                             <Route path="/trending" element={<Trending />} />
+                            <Route path="/categories" element={<Categories />} />
+                            <Route path="/about" element={<About />} />
                             <Route path="/wishlist" element={<Wishlist />} />
                             <Route path="/search" element={<SearchResults />} />
                             <Route path="/movie/:id" element={<MovieDetails />} />

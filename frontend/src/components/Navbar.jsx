@@ -30,11 +30,16 @@ function Navbar() {
             <div className="navbar-container">
                 {/* Logo Section */}
                 <div className="navbar-left">
-                    <div className="logo-container">
+                    <div className="logo-container" onClick={() => navigate('/')}>
                         <div className="logo-icon">I</div>
                         <span className="logo-text">
                             INFIES<span className="logo-accent"></span>
                         </span>
+                    </div>
+                    <div className="nav-links">
+                        <span className="nav-link" onClick={() => navigate('/')}>Home</span>
+                        <span className="nav-link" onClick={() => navigate('/categories')}>Categories</span>
+                        <span className="nav-link" onClick={() => navigate('/about')}>About</span>
                     </div>
                 </div>
 
@@ -86,3 +91,23 @@ function Navbar() {
 }
 
 export default Navbar;
+
+/* Add these styles to Navbar.css if not already present, or inline them here for now */
+/* 
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-left: 2rem;
+}
+
+.nav-link {
+    color: #e5e5e5;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #b3b3b3;
+}
+*/
